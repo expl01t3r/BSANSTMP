@@ -7,7 +7,9 @@ print('''
  _|    _|            _|      _|    _|      _|    _|_|            _|  
  _|_|_|    _|  _|_|_|    _|  _|    _|  _|  _|      _|  _|  _|_|_|    
 
-         Break Security - Automated Network Scanner
+           Break Security - Automated Network Scanner
+[+]Diego Bernardes
+[+]https://breaksec.wordpress.com/
 ''')
 import nmap
 import argparse
