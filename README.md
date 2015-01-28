@@ -9,6 +9,8 @@ Preview do B.S.A.N.S
 Ex.: C:\python34\lib
 
 
+
+
 2° Execute o scan.py com pelo menos um alvo
 
 Ex.: C:\python34\python.exe C:\scan.py --alvo scanme.org
