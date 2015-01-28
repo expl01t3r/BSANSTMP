@@ -29,7 +29,7 @@ result = nscan.scan(str(ps.alvo), ps.porta, '-A --version-all')
 for alvo in result['scan']:
     print('Resultados para o alvo: {alvo}\nNome do Computador: {pcnome}\nSistema Operacional: {so}\nIP: {ip}\nMAC: {mac}\nTécnica de escaneamento: {tecscan}\n' .format(alvo = alvo,
     pcnome = result['scan'][alvo]['hostname'], so = result['scan'][alvo]['osmatch'][0]['name'], ip = result['scan'][alvo]['addresses']['ipv4'],
-    mac = result['scan'][alvo]['addresses']['mac'], tecscan = result['nmap']['scaninfo']['tcp']['method']))
+    mac = result['scan'][alvo]['addresses']['mac'], tecscan = str(result['nmap']['scaninfo']['tcp']['method']).upper()))
     for x in result['scan'][alvo]['tcp']:
         print('Porta: {porta}\nEstado: {estado}\nNome do Serviço: {nome}\nversão do Serviço: {versao}\nInformações Extras: {extra}\n{leponto}'.format(
             porta = x, estado = result['scan'][alvo]['tcp'][x]['state'], nome = result['scan'][alvo]['tcp'][x]['name'], versao = result['scan'][alvo]['tcp'][x]['version'],
