@@ -21,9 +21,9 @@ ver = []
 
 ps = op.parse_args()
 print('[+] Inicando escaneamento\n')
-#ps.alvo = ''.join((x+' ' for x in ps.alvo))
+ps.alvo = ''.join((x+' ' for x in ps.alvo))
 
-result = nscan.scan('192.168.254.250',ps.porta,'-A')#str(ps.alvo), ps.porta)
+result = nscan.scan(str(ps.alvo), ps.porta'-A')
 for alvo in result['scan']:
     print('Resultados para o alvo: {alvo}\nNome do Computador: {pcnome}\nSistema Operacional: {so}\nIP: {ip}\nMAC: {mac}\nTécnica de escaneamento: {tecscan}\n' .format(alvo = alvo,
     pcnome = result['scan'][alvo]['hostname'], so = result['scan'][alvo]['osmatch'][0]['name'], ip = result['scan'][alvo]['addresses']['ipv4'],
