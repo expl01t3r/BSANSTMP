@@ -17,7 +17,7 @@ op.add_argument('--alvo', action = 'store', dest = 'alvo', required = False, hel
 op.add_argument('--porta', action = 'store', dest = 'porta', required = False, help = 'Digite a(s) porta(s) que serão escaneadas', default = '0-65535')
 porta = []
 nome = []
-versão = []
+ver = []
 
 ps = op.parse_args()
 print('[+] Inicando escaneamento\n')
@@ -29,10 +29,9 @@ for alvo in result['scan']:
     pcnome = result['scan'][alvo]['hostname'], so = result['scan'][alvo]['osmatch'][0]['name'], ip = result['scan'][alvo]['addresses']['ipv4'],
     mac = result['scan'][alvo]['addresses']['mac'], tecscan = result['nmap']['scaninfo']['tcp']['method']))
     for x in result['scan'][alvo]['tcp']:
-        print('Porta: {porta}\nEstado: {estado}\nNome do Serviço: {nome}\nVersão do Serviço: {versao}\nInformações Extras: {extra}\n{leponto}'.format(
+        print('Porta: {porta}\nEstado: {estado}\nNome do Serviço: {nome}\nver do Serviço: {versao}\nInformações Extras: {extra}\n{leponto}'.format(
             porta = x, estado = result['scan'][alvo]['tcp'][x]['state'], nome = result['scan'][alvo]['tcp'][x]['name'], versao = result['scan'][alvo]['tcp'][x]['version'],
             extra = result['scan'][alvo]['tcp'][x]['extrainfo'], leponto = ('-'*20)+'\n'))
         porta.append(x)
         nome.append(result['scan'][alvo]['tcp'][x]['name'])
-        versão.append(result['scan'][alvo]['tcp'][x]['version'])
-    print(('#'*20), '\n', porta, '\n', nome, '\n', versão )
+        ver.append(result['scan'][alvo]['tcp'][x]['version'])
