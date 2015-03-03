@@ -15,7 +15,7 @@ import nmap
 import argparse
 nscan = nmap.PortScanner()
 op = argparse.ArgumentParser()
-op.add_argument('--alvo', action = 'store', dest = 'alvo', required = False, help = 'Digite o IP do alvo', nargs = '+')
+op.add_argument('--alvo', action = 'store', dest = 'alvo', required = True, help = 'Digite o IP do alvo', nargs = '+')
 op.add_argument('--porta', action = 'store', dest = 'porta', required = False, help = 'Digite a(s) porta(s) que serão escaneadas', default = '0-65535')
 porta = []
 nome = []
